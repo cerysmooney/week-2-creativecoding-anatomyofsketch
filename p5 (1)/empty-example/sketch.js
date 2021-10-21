@@ -1,19 +1,31 @@
-let rectWidth = 25;
-let rectHeight = 25;
+let rectWidth = 115;
+let rectHeight = 257;
 function setup() {
   createCanvas(800,600);
   background(255);
+  noLoop();
   // put setup code here
 }
 
 function draw() {
-  text("Hello World!",0,50);
-  ellipse(50,50,40,40);
-  line(0,50,400,70);
-  triangle(347,54,392,9,392,66);
-  quad(158,55,199,14,392,66,351,197);
-  rect(25,50,rectWidth,rectHeight);
-  rect(525,67,rectWidth,rectHeight);
-  arc(300,300,50,50,90,270);
-  // put drawing code here
+  //noFill();
+  drawShape(rectWidth,rectHeight)
+  rect(25,50,rectWidth,rectHeight+1000);
+  rect(525,67,rectWidth-1000,rectHeight);
+  rect(360,260,rectWidth,rectHeight*2);
+  rect(480,346,rectWidth/2,rectHeight);
+  
+ 
 }
+
+  function drawShape(rectangleWidth,rectangleHeight) {
+    let xPos = random(0,width);
+    let yPos = random(0,height);
+
+    rect(xPos,yPos,rectangleWidth,rectangleHeight);
+    ellipse(xPos,yPos,rectangleWidth/2);
+    fill(random(0,255),random(0,255),random(0,255));
+
+
+  }
+  // put drawing code here
